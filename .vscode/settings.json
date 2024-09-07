@@ -15,4 +15,5 @@
         "Фика",
         "четырёхпроводной"
     ],
+    "python.analysis.autoImportCompletions": true,
 }
