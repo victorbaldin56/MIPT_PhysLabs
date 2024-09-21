@@ -65,16 +65,7 @@ def texTable(table):
 \end{table}
 """)
 
-def make_mnk_with_table_values(file, title, xlabel, ylabel, x, y, dx, dy, table_x, table_y):
-
-    mpl.rcParams['font.size'] = 16                   # Управление стилем, в данном случаем - размером шрифта
-    plt.figure(figsize = (10,8), facecolor = "white") # Создаем фигуру
-
-    # Подписываем оси и график
-    plt.title(title)
-    plt.ylabel(ylabel)
-    plt.xlabel(xlabel)
-
+def mnk(x, y):
     def func(x, k, b):
         return x * k + b
 
@@ -85,6 +76,18 @@ def make_mnk_with_table_values(file, title, xlabel, ylabel, x, y, dx, dy, table_
     print("k: ({} +- {})".format(k, dk))
     print("b: ({} +- {})".format(b, db))
 
+    return [k, dk], [b, db]
+
+def make_plot_with_table_values(file, title, xlabel, ylabel, x, y, dx, dy, k_b, table_x, table_y):
+
+    mpl.rcParams['font.size'] = 16                   # Управление стилем, в данном случаем - размером шрифта
+    plt.figure(figsize = (10,8), facecolor = "white") # Создаем фигуру
+
+    # Подписываем оси и график
+    plt.title(title)
+    plt.ylabel(ylabel)
+    plt.xlabel(xlabel)
+
     #plt.errorbar(x, y, "or", markersize = 9, label = 'Экспериментальные значения')
     plt.errorbar(x, y, xerr = dx, yerr = dy, fmt='.r', label = 'Экспериментальные значения')
     #plt.plot(x, y, "+b", label = "Экспериментальные данные", linewidth = 1)
@@ -92,8 +95,8 @@ def make_mnk_with_table_values(file, title, xlabel, ylabel, x, y, dx, dy, table_
     if table_x != 0 and table_y != 0:
         plt.errorbar(table_x, table_y, fmt='xb', label = 'Табличные значения')
 
-    x_lin = np.linspace(x[0], x[-1], 1000)
-    plt.plot(x_lin, func(x_lin, k, b), "b", label = "Аппроксимация")
+    x_lin = np.linspace(min(x), max(x), 1000)
+    plt.plot(x_lin, [i * k_b[0][0] + k_b[1][0] for i in x_lin], "b", label = "Аппроксимация")
 
     plt.grid(visible = True, which = 'major', axis = 'both', alpha = 1, linewidth = 0.9)   # Активируем сетку
     plt.grid(visible = True, which = 'minor', axis = 'both', alpha = 0.5, linestyle = ':')
@@ -105,10 +108,21 @@ def make_mnk_with_table_values(file, title, xlabel, ylabel, x, y, dx, dy, table_
     plt.savefig("{}".format(file))
     plt.show()
 
-    return [k, dk], [b, db]
-
 def make_mnk(file, title, xlabel, ylabel, x, y, dx, dy):
-    return make_mnk_with_table_values(file, title, xlabel, ylabel, x, y, dx, dy, 0, 0)
+
+    k, b = mnk(x, y)
+
+    make_plot_with_table_values(file, title, xlabel, ylabel, x, y, dx, dy, (k, b), 0, 0)
+
+    return k, b
+
+def make_mnk_with_table_values(file, title, xlabel, ylabel, x, y, dx, dy, table_x, table_y):
+
+    k, b = mnk(x, y)
+
+    make_plot_with_table_values(file, title, xlabel, ylabel, x, y, dx, dy, (k, b), table_x, table_y)
+
+    return k, b
 
 def make_mnk_direct_prop(file, title, xlabel, ylabel, x, y, dx, dy):
 
