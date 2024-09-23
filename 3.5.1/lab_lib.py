@@ -28,7 +28,7 @@ def texAns(val):
         if 1.0 <= inacc and inacc <= 1.3 or 9.7 <= inacc and inacc < 10:
             precision += 1
 
-    return r"$(%.*f \pm %.*f)$" % (precision, np.round(val[0], precision), precision, abs(np.round(val[1], precision)))
+    return r"$%.*f \pm %.*f$" % (precision, np.round(val[0], precision), precision, abs(np.round(val[1], precision)))
 
 def meanWithInacc(arr):
     mean = np.mean([x[0] for x in arr])
