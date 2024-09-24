@@ -78,6 +78,30 @@ def mnk(x, y):
 
     return [k, dk], [b, db]
 
+def make_plot_no_mnk(file, title, xlabel, ylabel, x, y, dx, dy):
+
+    mpl.rcParams['font.size'] = 16                   # Управление стилем, в данном случаем - размером шрифта
+    plt.figure(figsize = (10,8), facecolor = "white") # Создаем фигуру
+
+    # Подписываем оси и график
+    plt.title(title)
+    plt.ylabel(ylabel)
+    plt.xlabel(xlabel)
+
+    #plt.errorbar(x, y, "or", markersize = 9, label = 'Экспериментальные значения')
+    plt.errorbar(x, y, xerr = dx, yerr = dy, fmt='.r', label = 'Экспериментальные значения')
+    #plt.plot(x, y, "+b", label = "Экспериментальные данные", linewidth = 1)
+
+    plt.grid(visible = True, which = 'major', axis = 'both', alpha = 1, linewidth = 0.9)   # Активируем сетку
+    plt.grid(visible = True, which = 'minor', axis = 'both', alpha = 0.5, linestyle = ':')
+
+    plt.minorticks_on()
+    plt.tight_layout()
+    plt.legend(loc = "best", fontsize = 12) # Активируем легенду графика
+
+    plt.savefig("{}".format(file))
+    plt.show()
+
 def make_plot_with_table_values(file, title, xlabel, ylabel, x, y, dx, dy, k_b, table_x, table_y):
 
     mpl.rcParams['font.size'] = 16                   # Управление стилем, в данном случаем - размером шрифта
