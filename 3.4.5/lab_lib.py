@@ -8,7 +8,7 @@ def countWithSigma(val, arr):
     sigma = 0
     for i in arr:
         sigma += (i[1] / i[0]) ** 2
-    sigma = np.sqrt(sigma) * val
+    sigma = np.sqrt(sigma) * abs(val)
     return [val, sigma]
 
 def texAns(val):
@@ -69,14 +69,30 @@ def mnk(x, y):
     def func(x, k, b):
         return x * k + b
 
-    popt, pcov = curve_fit(func, x, y, p0 = (0.0, 0.0))
+    popt, pcov = curve_fit(func, x, y, p0 = (0, 0))
     k, b = popt
     dk, db = np.sqrt(np.diag(pcov))
 
-    print("k: ({} +- {})".format(k, dk))
-    print("b: ({} +- {})".format(b, db))
-
     return [k, dk], [b, db]
+
+def mnk_line_get_points(x, y, dx, dy, k_b):
+    minx = min(x) - max(dx)
+    miny = min(y) - max(dy)
+    maxx = max(x) + max(dx)
+    maxy = max(y) + max(dy)
+
+    p_x = [minx, maxx]
+    p_y = [minx * k_b[0][0] + k_b[1][0], maxx * k_b[0][0] + k_b[1][0]]
+
+    if miny > minx * k_b[0][0] + k_b[1][0]:
+        p_x[0] = (miny - k_b[1][0]) / k_b[0][0]
+        p_y[0] = miny
+
+    if maxy < maxx * k_b[0][0] + k_b[1][0]:
+        p_x[1] = (maxy - k_b[1][0]) / k_b[0][0]
+        p_y[1] = maxy
+
+    return p_x, p_y
 
 def make_plot_no_mnk(file, title, xlabel, ylabel, x, y, dx, dy):
 

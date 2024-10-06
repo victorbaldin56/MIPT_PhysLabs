@@ -93,6 +93,109 @@
 
     \section{Ход работы}
 
+        \subsection{Проверка калибровки шкал осциллографа}
 
+            Результат в таблице \ref{tab:calibr}
+
+            \begin{table}[!ht]
+                \centering
+                \begin{tabular}{|c|c|c|c|}
+                    \hline
+
+                    \multicolumn{2}{|c|}{$K_x, \frac{мВ}{дел}$} & \multicolumn{2}{c|}{$K_y, \frac{мВ}{дел}$} \\ \hline
+                    Осцилл. & Калибр. & Осцилл. & Калибр.\\ \hline
+                    20 & 18.3 & 20 & 20.5\\ \hline
+                    100 & 94 & 10 & 0.08\\ \hline
+
+                \end{tabular}
+                \caption{Результаты калибровки шкал осциллографа}
+                \label{tab:calibr}
+            \end{table}
+
+        \subsection{Измерение параметров RC-ячейки}
+
+            \begin{align*}
+                \tau = \frac{U_{вх}}{U_{вых} \omega_0} = \frac{5.65~В}{0.042~В \cdot 2\pi50~Гц} &= 0.43~с
+            \end{align*}
+
+            \begin{align*}
+                \tau = RC = 20~кОм \cdot 20~мкФ &= 0.4~с
+            \end{align*}
+
+            Как видим, результаты почти совпали. Также выполняется условие $R >> \frac{1}{\omega C}$ ($20000 >> 159$).
+
+        \subsection{Обработка результатов}
+
+            Графики и таблица итоговых результатов представлены ниже.
+
+            \begin{figure}[!ht]
+                \centering
+                \includegraphics[width=0.65\textwidth]{img/plot_Fe.png}
+                \caption{График зависимости $B(H)$ для феррита}
+                \label{plot:Fe}
+            \end{figure}
+
+            \begin{figure}[!ht]
+                \centering
+                \includegraphics[width=0.65\textwidth]{img/plot_FeNi.png}
+                \caption{График зависимости $B(H)$ для пермаллоя}
+                \label{plot:FeNi}
+            \end{figure}
+
+            \begin{figure}[!ht]
+                \centering
+                \includegraphics[width=0.65\textwidth]{img/plot_FeSi.png}
+                \caption{График зависимости $B(H)$ для кремнистого железа}
+                \label{plot:FeSi}
+            \end{figure}
+
+            \begin{table}[!ht]
+                \centering
+                \begin{tabular}{|c|c|c|c|}
+                    \hline
+
+                    Материал & Fe & Fe-Ni & Fe-Si\\ \hline
+                    $I_{max}, мА$ & $160.00 \pm 0.01$ & $200.00 \pm 0.01$ & $800.00 \pm 0.01$\\ \hline
+                    $K_x, \frac{В}{дел}$ & 0.02 & 0.02 & 0.02\\ \hline
+                    $K_y, \frac{В}{дел}$ & 0.01 & 0.1 & 0.01\\ \hline
+                    $H, \frac{А/м}{дел}$ & 10.7 & 9.7 & 26.7\\ \hline
+                    $B, \frac{Тл}{дел}$ & 3.3 & 4.8 & 8.3\\ \hline
+                    $H_{max}, А/м$ & $45 \pm 1$ & $49.58 \pm 0.97$ & $107 \pm 3$\\ \hline
+                    $B_s, Тл$ & $13.7 \pm 0.3$ & $10.0 \pm 0.5$ & $18.3 \pm 0.8$\\ \hline
+                    $H_c, А/м$ & $6 \pm 1$ & $5.83 \pm 0.97$ & $16 \pm 3$\\ \hline
+                    $B_r, Тл$ & $5.3 \pm 0.3$ & $7.7 \pm 0.5$ & $13.3 \pm 0.8$\\ \hline
+                    $\mu_{диф_{нач}}$ & $0.29 \pm 0.08$ & $0.04 \pm 0.02$ & $0.37 \pm 0.02$\\ \hline
+                    $\mu_{диф_{макс}}$ & $0.58 \pm 0.01$ & $0.68 \pm 0.04$ & $0.382 \pm 0.004$\\ \hline
+
+                \end{tabular}
+                \caption{Результаты расчётов}
+                \label{tab:res}
+            \end{table}
+
+    \section{Вывод}
+
+        Изучили петли гистерезиса различных ферромагнитных материалов в переменных токах.
+
+        Сравним полученные результаты с табличными значениями:
+
+        \begin{table}[!ht]
+            \centering
+            \begin{tabular}{|c|c|c|c|c|}
+                \hline
+                & Ампл. & Fe-Ni & Fe-Si & Феррит \\ \hline
+                эксп & \multirow{2}{*}{$H_c$, A/м} & $5.83 \pm 0.97$ & $16 \pm 3$ & $6 \pm 1$ \\ \cline{1-1} \cline{3-5}
+                табл &  & 4 & 8 & 8 \\ \hline
+                эксп & \multirow{2}{*}{$B_s$, Тл} & $10.0 \pm 0.5$ & $18.3 \pm 0.8$ & $13.7 \pm 0.3$ \\ \cline{1-1} \cline{3-5}
+                табл &  & 1.1 & 2 & 0.2-0.4 \\ \hline
+            \end{tabular}\\
+            \caption{Результаты расчётов и табличные значения}
+            \label{tab:tab_and_res}
+        \end{table}
+
+        Значения индукции насыщения достаточно сильно отличаются от табличных. Это можно объяснить неточностью определения момента, в который петля становится предельной.
+
+        Проверки калибровки показала хороший результат.
+
+        Измеренные параметры RC-ячейки почти совпали с указанными на установке.
 
 \end{document}
