@@ -34,6 +34,7 @@
     \maketitle
     \newpage
     \pagenumbering{arabic}
+    \renewcommand*{\thesubsection}{\thesection.\Alph{subsection}}
 
     \textbf{Цель работы:} изучить спектры сигналов различной формы и влияние параметров сигнала на вид соответствующих спектров; проверить справедливость соотношений неопределённостей; познакомиться с работой спектральных фильтров на примере RC-цепочки
 
@@ -155,5 +156,210 @@
                 Спектр таких колебаний содержит три составляющих  основную компоненту и две боковых (рис. 6). Первое слагаемое в правой части представляет собой исходное немодулированное колебание с основной (несущей) частотой $\omega_{0}$ и амплитудой $a_{осн} = A_{0}$ . Второе и третье слагаемые соответствуют новым гармоническим колебаниям с частотами $\omega_{0} + \Omega$ и $\omega_{0} - \Omega$. Амплитуды этих двух колебаний одинаковы и составляют $\dfrac{m}{2}$ от амплитуды немодулированного колебания:
 
                 $a_{бок} = \dfrac{A_{0}m}{2}$. Начальные фазы всех трех колебаний одинаковы.
+
+    \section{Ход работы}
+
+        \subsection{Исследование спектра периодической последовательности\\прямоугольных импульсов и проверка соотношений\\неопределённостей}
+
+            \setcounter{subsubsection}{2}
+            \subsubsection{Настроим прямоугольный сигнал}
+
+                $\nu_{повт} = 1~кГц$, $\tau = T/20 = 50~мкс$
+
+            \subsubsection{Устойчивая картина на экране осциллографа}
+
+                Снимок экрана на рисунке \ref{plot:A.4}
+
+                \begin{figure}[ht]
+                    \begin{minipage}[ht]{0.49\linewidth}
+                        \center{\includegraphics[width=0.95\linewidth]{img/data/A.4.png}}
+                        \caption{Устойчивая картина прямоугольных импульсов}
+                        \label{plot:A.4}
+                    \end{minipage}
+                    \begin{minipage}[ht]{0.49\linewidth}
+                        \center{\includegraphics[width=0.95\linewidth]{img/data/A.5.png}}
+                        \caption{Спектр прямоугольных импульсов (преобразование Фурье)}
+                        \label{plot:A.5}
+                    \end{minipage}
+                \end{figure}
+
+            \subsubsection{Спектр прямоугольного сигнала (преобразование Фурье)}
+
+                Снимок экрана на рисунке \ref{plot:A.5}
+
+            \subsubsection{Наблюдение изменений спектра при изменеии параметров сигнала}
+
+                Результаты и параметра на рисунках \ref{plot:A.6.1}, \ref{plot:A.6.2}, \ref{plot:A.6.3}, \ref{plot:A.6.4}, \ref{plot:A.6.5}, \ref{plot:A.6.6}, \ref{plot:A.6.7}
+
+                \begin{figure}[ht]
+                    \begin{minipage}[ht]{0.49\linewidth}
+                        \center{\includegraphics[width=0.95\linewidth]{img/data/A.6/0.5kHz_50us.png}}
+                        \caption{Спектр прямоугольного сигнала\\($\nu_{повт} = 0.5~кГц$; $\tau = 50~мкс$)}
+                        \label{plot:A.6.1}
+                    \end{minipage}
+                    \begin{minipage}[ht]{0.49\linewidth}
+                        \center{\includegraphics[width=0.95\linewidth]{img/data/A.6/1.0kHz_50us.png}}
+                        \caption{Спектр прямоугольного сигнала\\($\nu_{повт} = 1~кГц$; $\tau = 50~мкс$)}
+                        \label{plot:A.6.2}
+                    \end{minipage}
+                \end{figure}
+
+                \begin{figure}[ht]
+                    \begin{minipage}[ht]{0.49\linewidth}
+                        \center{\includegraphics[width=0.95\linewidth]{img/data/A.6/1.5kHz_50us.png}}
+                        \caption{Спектр прямоугольного сигнала\\($\nu_{повт} = 1.5~кГц$; $\tau = 50~мкс$)}
+                        \label{plot:A.6.3}
+                    \end{minipage}
+                    \begin{minipage}[ht]{0.49\linewidth}
+                        \center{\includegraphics[width=0.95\linewidth]{img/data/A.6/2.0kHz_50us.png}}
+                        \caption{Спектр прямоугольного сигнала\\($\nu_{повт} = 2~кГц$; $\tau = 50~мкс$)}
+                        \label{plot:A.6.4}
+                    \end{minipage}
+                \end{figure}
+
+                \begin{figure}[ht]
+                    \begin{minipage}[ht]{0.49\linewidth}
+                        \center{\includegraphics[width=0.95\linewidth]{img/data/A.6/1.0kHz_60us.png}}
+                        \caption{Спектр прямоугольного сигнала\\($\nu_{повт} = 1~кГц$; $\tau = 60~мкс$)}
+                        \label{plot:A.6.5}
+                    \end{minipage}
+                    \begin{minipage}[ht]{0.49\linewidth}
+                        \center{\includegraphics[width=0.95\linewidth]{img/data/A.6/1.0kHz_70us.png}}
+                        \caption{Спектр прямоугольного сигнала\\($\nu_{повт} = 1~кГц$; $\tau = 70~мкс$)}
+                        \label{plot:A.6.6}
+                    \end{minipage}
+                \end{figure}
+
+                \begin{figure}[ht]
+                    \begin{minipage}[ht]{0.49\linewidth}
+                        \center{\includegraphics[width=0.95\linewidth]{img/data/A.6/1.0kHz_80us.png}}
+                        \caption{Спектр прямоугольного сигнала\\($\nu_{повт} = 1~кГц$; $\tau = 80~мкс$)}
+                        \label{plot:A.6.7}
+                    \end{minipage}
+                \end{figure}
+
+            \subsubsection{Измерение параматров спектра}
+
+                Теоретические формулы:
+
+                \begin{align*}
+                    \nu_n^{теор} &= \frac{n}{T}, & \vert a_n \vert &= \frac{\vert sin\frac{\pi n \tau}{T} \vert}{\pi n} = \frac{\tau}{T} \frac{\vert sin \pi \nu_n \tau \vert}{\pi \nu_n \tau}
+                \end{align*}
+
+                Результаты измерений и расчётов в таблице \ref{tab:A.7}
+
+                \begin{table}[!ht]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|c|c|}
+                        \hline
+
+                        $n$ & 1 & 2 & 3 & 4 & 5\\ \hline
+                        $\nu_n^{эксп}, кГц$ & $1.00 \pm 0.01$ & $2.00 \pm 0.01$ & $3.00 \pm 0.01$ & $4.00 \pm 0.01$ & $5.00 \pm 0.01$\\ \hline
+                        $\nu_n^{теор}, кГц$ & 1 & 2 & 3 & 4 & 5\\ \hline
+                        $\vert a_n \vert^{эксп}, усл. ед.$ & $279.0 \pm 1.0$ & $274.0 \pm 1.0$ & $269.0 \pm 1.0$ & $261.0 \pm 1.0$ & $251.0 \pm 1.0$\\ \hline
+                        $\vert a_n/a_1 \vert^{эксп}$ & $1.000 \pm 0.005$ & $0.982 \pm 0.005$ & $0.964 \pm 0.005$ & $0.935 \pm 0.005$ & $0.900 \pm 0.005$\\ \hline
+                        $\vert a_n/a_1 \vert^{теор}$ & 1 & 0.987688 & 0.967371 & 0.939347 & 0.904029\\ \hline
+
+                    \end{tabular}
+                    \begin{tabular}{|c|c|c|c|}
+                        \hline
+
+                        $n$ & 6 & 7 & 8\\ \hline
+                        $\nu_n^{эксп}, кГц$ & $6.00 \pm 0.01$ & $7.00 \pm 0.01$ & $8.00 \pm 0.01$\\ \hline
+                        $\nu_n^{теор}, кГц$ & 6 & 7 & 8\\ \hline
+                        $\vert a_n \vert^{эксп}, усл. ед.$ & $239.0 \pm 1.0$ & $226.0 \pm 1.0$ & $211.0 \pm 1.0$\\ \hline
+                        $\vert a_n/a_1 \vert^{эксп}$ & $0.857 \pm 0.005$ & $0.810 \pm 0.005$ & $0.756 \pm 0.004$\\ \hline
+                        $\vert a_n/a_1 \vert^{теор}$ & 0.861934 & 0.813674 & 0.759948\\ \hline
+
+                    \end{tabular}
+                    \caption{Параметры спектра прямоугольного сигнала}
+                    \label{tab:A.7}
+                \end{table}
+
+            \subsubsection{Измерение полной ширины спектра при различных длинах импульса}
+
+                Зафиксируем $T = 1~мс$. Результаты в таблице \ref{tab:A.8}
+
+                \begin{table}[ht]
+                    \begin{minipage}[ht]{0.49\linewidth}
+                        \centering
+                        \begin{tabular}{|c|c|}
+                            \hline
+
+                            $\tau, мкс$ & $\Delta \nu, кГц$\\ \hline
+                            20 & $52.0 \pm 0.5$\\ \hline
+                            30 & $33.0 \pm 0.5$\\ \hline
+                            40 & $25.0 \pm 0.5$\\ \hline
+                            50 & $20.0 \pm 0.5$\\ \hline
+                            60 & $16.0 \pm 0.5$\\ \hline
+                            70 & $14.0 \pm 0.5$\\ \hline
+                            80 & $13.0 \pm 0.5$\\ \hline
+                            90 & $11.0 \pm 0.5$\\ \hline
+                            100 & $10.0 \pm 0.5$\\ \hline
+                            110 & $9.0 \pm 0.5$\\ \hline
+                            120 & $8.0 \pm 0.5$\\ \hline
+                            130 & $8.0 \pm 0.5$\\ \hline
+                            140 & $7.0 \pm 0.5$\\ \hline
+                            150 & $6.0 \pm 0.5$\\ \hline
+                            160 & $6.0 \pm 0.5$\\ \hline
+                            170 & $6.0 \pm 0.5$\\ \hline
+                            180 & $6.0 \pm 0.5$\\ \hline
+                            190 & $5.0 \pm 0.5$\\ \hline
+                            200 & $5.0 \pm 0.5$\\ \hline
+
+                        \end{tabular}
+                        \caption{Зависимость полной ширины спектра от длительности импульса}
+                        \label{tab:A.8}
+                    \end{minipage}
+                    \begin{minipage}[ht]{0.49\linewidth}
+                        \centering
+                        \begin{tabular}{|c|c|}
+                            \hline
+
+                            $T, мкс$ & $\delta \nu, кГц$\\ \hline
+                            200 & $5.13 \pm 0.01$\\ \hline
+                            600 & $1.67 \pm 0.01$\\ \hline
+                            1000 & $1.00 \pm 0.01$\\ \hline
+                            1400 & $0.70 \pm 0.01$\\ \hline
+                            1800 & $0.55 \pm 0.01$\\ \hline
+                            2200 & $0.46 \pm 0.01$\\ \hline
+                            2600 & $0.39 \pm 0.01$\\ \hline
+                            3000 & $0.34 \pm 0.01$\\ \hline
+                            3400 & $0.29 \pm 0.01$\\ \hline
+                            3800 & $0.27 \pm 0.01$\\ \hline
+                            4200 & $0.24 \pm 0.01$\\ \hline
+                            4600 & $0.22 \pm 0.01$\\ \hline
+                            5000 & $0.20 \pm 0.01$\\ \hline
+
+                        \end{tabular}
+                        \caption{Зависимость расстояния между соседними гармониками от периода повторения}
+                        \label{tab:A.9}
+                    \end{minipage}
+                \end{table}
+
+            \subsubsection{Измерение расстояния между соседними гармониками при различных периодах повторения сигнала}
+
+                Зафиксируем $\tau = 100~мкс$. Результаты в таблице \ref{tab:A.9}
+
+            \subsubsection{Графики зависимостей $\Delta \nu(1/\tau)$ и $\delta \nu(1/T)$. Проверка соотношений неопределённости}
+
+                Графики на рисунках \ref{plot:A.10.1} и \ref{plot:A.10.2}
+
+                Проверим соотношения неопределённостей: $\Delta \nu \sim \frac{1}{\tau}$ и $\delta \nu \sim \frac{1}{T}$
+
+                По МНК коэффициенты: $k_{\tau} = 1.012 \pm 0.007$; $k_{T} = 1.021 \pm 0.003$. Как видим соотношения выполняются с хорошей точностью.
+
+                \begin{figure}[ht]
+                    \begin{minipage}[ht]{0.49\linewidth}
+                        \center{\includegraphics[width=0.95\linewidth]{img/plot_A.10.1.png}}
+                        \caption{График зависимости $\Delta \nu(1/\tau)$}
+                        \label{plot:A.10.1}
+                    \end{minipage}
+                    \begin{minipage}[ht]{0.49\linewidth}
+                        \center{\includegraphics[width=0.95\linewidth]{img/plot_A.10.2.png}}
+                        \caption{График зависимости $\delta \nu(1/T)$}
+                        \label{plot:A.10.2}
+                    \end{minipage}
+                \end{figure}
 
 \end{document}
