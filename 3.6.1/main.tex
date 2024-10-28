@@ -231,6 +231,7 @@
                 \end{figure}
 
                 \begin{figure}[ht]
+                    \centering
                     \begin{minipage}[ht]{0.49\linewidth}
                         \center{\includegraphics[width=0.95\linewidth]{img/data/A.6/1.0kHz_80us.png}}
                         \caption{Спектр прямоугольного сигнала\\($\nu_{повт} = 1~кГц$; $\tau = 80~мкс$)}
@@ -361,5 +362,292 @@
                         \label{plot:A.10.2}
                     \end{minipage}
                 \end{figure}
+
+        \subsection{Наблюдение периодической последовательности цугов}
+            \setcounter{subsubsection}{10}
+            \subsubsection{Устойчивая картина цугов на экране осциллографа}
+
+                Частота несущей $\nu_0 = 50~кГц$, период повторения $T = 1~мс$, число периодов синусоиды в одном импульсе $N = 5$
+
+                Получили картину на рисунке \ref{plot:B.11}
+
+                \begin{figure}[ht]
+                    \centering
+                    \begin{minipage}[ht]{0.49\linewidth}
+                        \center{\includegraphics[width=0.95\linewidth]{img/data/B.11.png}}
+                        \caption{Устойчивая картина цугов}
+                        \label{plot:B.11}
+                    \end{minipage}
+                \end{figure}
+
+            \subsubsection{Спектр периодической последовательности цугов}
+
+                Спектр для сигнала с теми же параметрами на рисунке \ref{plot:B.13.1}
+
+            \subsubsection{Изменение спектра при изменении параметров}
+
+                Спектры представлены на рисунках \ref{plot:B.13.1}, \ref{plot:B.13.2}, \ref{plot:B.13.3} и \ref{plot:B.13.4}
+
+                \begin{figure}[ht]
+                    \begin{minipage}[ht]{0.49\linewidth}
+                        \center{\includegraphics[width=0.95\linewidth]{img/data/B.13/50kHz_1ms_5.png}}
+                        \caption{Спектр цугов\\($\nu_0 = 50~кГц$; $T = 1~мс$; $N = 5$)}
+                        \label{plot:B.13.1}
+                    \end{minipage}
+                    \begin{minipage}[ht]{0.49\linewidth}
+                        \center{\includegraphics[width=0.95\linewidth]{img/data/B.13/25kHz_1ms_5.png}}
+                        \caption{Спектр цугов\\($\nu_0 = 25~кГц$; $T = 1~мс$; $N = 5$)}
+                        \label{plot:B.13.2}
+                    \end{minipage}
+                \end{figure}
+
+                \begin{figure}[ht]
+                    \begin{minipage}[ht]{0.49\linewidth}
+                        \center{\includegraphics[width=0.95\linewidth]{img/data/B.13/50kHz_0.5ms_5.png}}
+                        \caption{Спектр цугов\\($\nu_0 = 50~кГц$; $T = 0.5~мс$; $N = 5$)}
+                        \label{plot:B.13.3}
+                    \end{minipage}
+                    \begin{minipage}[ht]{0.49\linewidth}
+                        \center{\includegraphics[width=0.95\linewidth]{img/data/B.13/50kHz_1ms_10.png}}
+                        \caption{Спектр цугов\\($\nu_0 = 50~кГц$; $T = 1~мс$; $N = 10$)}
+                        \label{plot:B.13.4}
+                    \end{minipage}
+                \end{figure}
+
+            \subsubsection{Параметры спектров, проверка соотношений неопределённостей}
+
+                Проверим соотношения неопределённостей: должно выполняться $\Delta \nu \cdot \tau_0 \sim 1$ и $\delta \nu \cdot T \sim 1$
+
+                По теореме смещения, смещение по времени не меняет амплитуд спектральных компонент, а лишь сдвигает их фазы (пропорционально частоте компоненты)
+
+                \begin{table}[!ht]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|c|c|}
+                        \hline
+
+                        $\tau_0, мс$ & $\Delta \nu, кГц$ & $\Delta \nu \cdot \tau_0$ & $T, мс$ & $\delta \nu, кГц$ & $\delta \nu \cdot T$\\ \hline
+                        0.02 & 10 & 0.2 & 1 & 1 & 1\\ \hline
+                        0.04 & 5 & 0.2 & 1 & 1 & 1\\ \hline
+                        0.02 & 10 & 0.2 & 0.5 & 2 & 1\\ \hline
+                        0.02 & 5 & 0.1 & 1 & 1 & 1\\ \hline
+
+                    \end{tabular}
+                    \caption{Параметры спектра последовательности цугов}
+                    \label{tab:B.14}
+                \end{table}
+
+        \setcounter{subsection}{3}
+        \subsection{Исследование спектра амплитудно-модулированного сигнала}
+
+            \setcounter{subsubsection}{18}
+            \subsubsection{Модулированный по амплитуде синусоидальный сигнал}
+
+                Частота несущей $\nu_0 = 50~кГц$, частота модуляции $\nu_{мод} = 2~кГц$, глубина модуляции $50~\% (m = 0.5)$
+
+                Устойчивая картина сигнала на рисунке \ref{plot:D.19}
+
+                \begin{figure}[ht]
+                    \centering
+                    \begin{minipage}[ht]{0.49\linewidth}
+                        \center{\includegraphics[width=0.95\linewidth]{img/data/D.19.png}}
+                        \caption{Устойчивая картина модулированного сигнала}
+                        \label{plot:D.19}
+                    \end{minipage}
+                \end{figure}
+
+            \subsubsection{Параметры сигнала}
+
+                \begin{align*}
+                    A_{max} &= 1.44~В & A_{min} &= 0.48~В
+                \end{align*}
+
+                $$
+                    m = \frac{A_{max} - A_{min}}{A_{max} + A_{min}} = \frac{1.44 - 0.48}{1.44 + 0.48} = 0.5 = 50\%
+                $$
+
+                Равенство выполняется
+
+            \subsubsection{Спектр сигнала}
+
+                Спектры сигнала при различных параметров на рисунках \ref{plot:D.21.1}, \ref{plot:D.21.2}, \ref{plot:D.21.3} и \ref{plot:D.21.4}
+
+                Параметры в таблице \ref{tab:D.21}
+
+                \begin{figure}[ht]
+                    \begin{minipage}[ht]{0.49\linewidth}
+                        \center{\includegraphics[width=0.95\linewidth]{img/data/D.21/50kHz_2kHz_0.5.png}}
+                        \caption{Спектр модулированного сигнала\\($\nu_0 = 50~кГц$; $\nu_{мод} = 2~кГц$; $m = 0.5$)}
+                        \label{plot:D.21.1}
+                    \end{minipage}
+                    \begin{minipage}[ht]{0.49\linewidth}
+                        \center{\includegraphics[width=0.95\linewidth]{img/data/D.21/100kHz_2kHz_0.5.png}}
+                        \caption{Спектр модулированного сигнала\\($\nu_0 = 100~кГц$; $\nu_{мод} = 2~кГц$; $m = 0.5$)}
+                        \label{plot:D.21.2}
+                    \end{minipage}
+                \end{figure}
+
+                \begin{figure}[ht]
+                    \begin{minipage}[ht]{0.49\linewidth}
+                        \center{\includegraphics[width=0.95\linewidth]{img/data/D.21/50kHz_4kHz_0.5.png}}
+                        \caption{Спектр модулированного сигнала\\($\nu_0 = 50~кГц$; $\nu_{мод} = 4~кГц$; $m = 0.5$)}
+                        \label{plot:D.21.3}
+                    \end{minipage}
+                    \begin{minipage}[ht]{0.49\linewidth}
+                        \center{\includegraphics[width=0.95\linewidth]{img/data/D.21/50kHz_2kHz_0.75.png}}
+                        \caption{Спектр модулированного сигнала\\($\nu_0 = 50~кГц$; $\nu_{мод} = 2~кГц$; $m = 0.75$)}
+                        \label{plot:D.21.4}
+                    \end{minipage}
+                \end{figure}
+
+                \begin{table}[!ht]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|c|}
+                        \hline
+
+                        $\nu_0, кГц$ & $\nu_{мод}, кГц$ & m & $\nu_0^{изм}, кГц$ & $\nu_{мод}^{изм}, кГц$\\ \hline
+                        50 & 2 & 0.5 & 50 & 2\\ \hline
+                        100 & 2 & 0.5 & 100 & 2\\ \hline
+                        50 & 4 & 0.5 & 50 & 4\\ \hline
+                        50 & 2 & 0.75 & 50 & 2\\ \hline
+
+                    \end{tabular}
+                    \caption{Параметры спектра модулированного сигнала}
+                    \label{tab:D.21}
+                \end{table}
+
+            \subsubsection{Отношение амплитуд при различной глубине модуляции}
+
+                Результат в таблице \ref{tab:D.22}
+
+                \begin{table}[!ht]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+                        \hline
+
+                        $m, \%$ & 10 & 20 & 30 & 40 & 50 & 60 & 70 & 80 & 90 & 100\\ \hline
+                        $\frac{a_{бок}}{a_{осн}}$ & 0.051 & 0.1 & 0.15 & 0.2 & 0.249 & 0.299 & 0.348 & 0.399 & 0.449 & 0.495\\ \hline
+
+                    \end{tabular}
+                    \caption{Отношение амплитуд при различной глубине модуляции}
+                    \label{tab:D.22}
+                \end{table}
+
+            \subsubsection{График зависимости $a_{бок}/a_{осн}$ от $m$}
+
+                Амплитуда боковой гармоники $a_1 = ma_0/2$, где $a_0$ - амплитуда основной гармоники
+
+                График на рисунке \ref{plot:D.23}
+
+                \begin{figure}[ht]
+                    \centering
+                    \begin{minipage}[ht]{0.49\linewidth}
+                        \center{\includegraphics[width=0.95\linewidth]{img/plot_D.23.png}}
+                        \caption{График зависимости $a_{бок}/a_{осн}$ от $m$}
+                        \label{plot:D.23}
+                    \end{minipage}
+                \end{figure}
+
+        \setcounter{subsection}{5}
+        \subsection{Изучение фильтрации сигналов}
+
+            \setcounter{subsubsection}{23}
+            \subsubsection{Параметры RC-цепочки}
+
+                \begin{align*}
+                    R &= 3~кОм & C &= 1000~пФ & \tau_{RC} &= RC = 3~мкс & \nu_{RC} &= 1/\nu_{RC} = 0.33~МГц
+                \end{align*}
+
+                Подадим последовательность прямоугольных импульсов с периодом повторения $T = 3~мкс \sim \tau_{RC}$ и длительностью $\tau = 150~нс \sim T/20$
+
+            \subsubsection{Сигналы и спектры при различных значениях $T$}
+
+                Сигналы на рисунках \ref{plot:F.27.1}, \ref{plot:F.27.2} и \ref{plot:F.27.3}
+
+                Спектры на рисунках \ref{plot:F.27.4}, \ref{plot:F.27.5} и \ref{plot:F.27.6}
+
+                \begin{figure}[ht]
+                    \begin{minipage}[ht]{0.49\linewidth}
+                        \center{\includegraphics[width=0.95\linewidth]{img/data/F.27/1.5us_150ns.png}}
+                        \caption{Прямоугольные импульсы\\($T = 1.5~мкс$; $\tau = 150~нс$)}
+                        \label{plot:F.27.1}
+                    \end{minipage}
+                    \begin{minipage}[ht]{0.49\linewidth}
+                        \center{\includegraphics[width=0.95\linewidth]{img/data/F.27/3us_150ns.png}}
+                        \caption{Прямоугольные импульсы\\($T = 3~мкс$; $\tau = 150~нс$)}
+                        \label{plot:F.27.2}
+                    \end{minipage}
+                \end{figure}
+                \begin{figure}[ht]
+                    \begin{minipage}[ht]{0.49\linewidth}
+                        \center{\includegraphics[width=0.95\linewidth]{img/data/F.27/6us_150ns.png}}
+                        \caption{Прямоугольные импульсы\\($T = 6~мкс$; $\tau = 150~нс$)}
+                        \label{plot:F.27.3}
+                    \end{minipage}
+                    \begin{minipage}[ht]{0.49\linewidth}
+                        \center{\includegraphics[width=0.95\linewidth]{img/data/F.27/1.5us_150ns_spectre.png}}
+                        \caption{Спектр прямоугольных импульсов\\($T = 1.5~мкс$; $\tau = 150~нс$)}
+                        \label{plot:F.27.4}
+                    \end{minipage}
+                \end{figure}
+                \begin{figure}[ht]
+                    \begin{minipage}[ht]{0.49\linewidth}
+                        \center{\includegraphics[width=0.95\linewidth]{img/data/F.27/3us_150ns_spectre.png}}
+                        \caption{Спектр прямоугольных импульсов\\($T = 3~мкс$; $\tau = 150~нс$)}
+                        \label{plot:F.27.5}
+                    \end{minipage}
+                    \begin{minipage}[ht]{0.49\linewidth}
+                        \center{\includegraphics[width=0.95\linewidth]{img/data/F.27/6us_150ns_spectre.png}}
+                        \caption{Спектр прямоугольных импульсов\\($T = 6~мкс$; $\tau = 150~нс$)}
+                        \label{plot:F.27.6}
+                    \end{minipage}
+                \end{figure}
+
+            \subsubsection{Сравнение амплитуд спектральных гармоник исходного и фильтрованного сигналов}
+
+                Подадим последовательность прямоугольных импульсов с периодом повторения $T = 3~мкс$ и длительностью $\tau = 150~нс$
+
+                Результаты измерения амплитуд фильтрованного и исходного сигнала в таблице \ref{tab:F.28}
+
+                \begin{table}[!ht]
+                    \centering
+                    \begin{tabular}{|c|c|c|c|}
+                        \hline
+
+                        $n$ & $a_n^0, мВ$ & $a_n^ф, мВ$ & $K_n = \vert a_n^ф \vert / \vert a_n^0 \vert$\\ \hline
+                        1 & $264 \pm 10$ & $33.5 \pm 1.0$ & $0.127 \pm 0.006$\\ \hline
+                        2 & $260 \pm 10$ & $20.0 \pm 1.0$ & $0.077 \pm 0.005$\\ \hline
+                        3 & $257 \pm 10$ & $9.6 \pm 1.0$ & $0.037 \pm 0.004$\\ \hline
+                        4 & $247 \pm 10$ & $8.8 \pm 1.0$ & $0.036 \pm 0.004$\\ \hline
+                        5 & $237 \pm 10$ & $8.8 \pm 1.0$ & $0.037 \pm 0.005$\\ \hline
+                        6 & $227 \pm 10$ & $8.2 \pm 1.0$ & $0.036 \pm 0.005$\\ \hline
+                        7 & $216 \pm 10$ & $6.4 \pm 1.0$ & $0.030 \pm 0.005$\\ \hline
+                        8 & $202 \pm 10$ & $4.5 \pm 1.0$ & $0.022 \pm 0.005$\\ \hline
+                        9 & $187 \pm 10$ & $2.0 \pm 1.0$ & $0.011 \pm 0.005$\\ \hline
+
+                    \end{tabular}
+                    \caption{Сравнение амплитуд спектральных гармоник исходного и фильтрованного сигналов}
+                    \label{tab:F.28}
+                \end{table}
+
+                Теоретическая зависимость $K = \frac{1}{\tau_{RC}} \int_0^t f(t')dt'$
+
+                Построим график $K(1/\nu)$ на рисунке \ref{plot:F.28}. По углу наклона определим $\tau_{RC}$
+
+                \begin{figure}[ht]
+                    \centering
+                    \begin{minipage}[ht]{0.49\linewidth}
+                        \center{\includegraphics[width=0.95\linewidth]{img/plot_D.23.png}}
+                        \caption{График зависимости $K(1/\nu)$}
+                        \label{plot:F.28}
+                    \end{minipage}
+                \end{figure}
+
+                $$
+                    \tau_{RC} = \frac{1}{2 \pi k} = (3.6 \pm 0.6)~мкс
+                $$
+
+    \section{Вывод}
+
+        В данной работе мы изучили понятие спектра и спектрального анализа, исследовали спектральный состав периодических электрических сигналов, а точнее прямоугольных импульсов, цугов гармонических колебаний, гармонических сигналов, модулированных по амплитуде и частоте, а также проанализировали фильтрацию сигналов при прохождении их через $RC$ контур. Проверили частный случай выполнения соотношения неопределённости.
 
 \end{document}
